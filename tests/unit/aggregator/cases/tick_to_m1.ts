@@ -1,5 +1,5 @@
 const input = {
-  data: require('./../sample_tick_data.json'),
+  data: require('./../samples/sample_tick_data.json'),
   fromTimeframe: 'tick',
   toTimeframe: 'm1',
   priceType: 'bid'

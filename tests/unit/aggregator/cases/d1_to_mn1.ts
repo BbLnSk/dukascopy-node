@@ -1,5 +1,5 @@
 const input = {
-  data: require('./../sample_d1_data.json'),
+  data: require('./../samples/sample_d1_data.json'),
   fromTimeframe: 'd1',
   toTimeframe: 'mn1',
   priceType: 'bid'
