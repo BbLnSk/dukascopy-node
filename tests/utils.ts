@@ -25,7 +25,7 @@ function getConfigDescription(config: HistoryConfig): string {
     ignoreFlats
   } = config;
 
-  return `${instrument}, ${timeframe}, ${from}, ${to}, offset: ${utcOffset}, ignoreFlats: ${!!ignoreFlats}`;
+  return `${instrument}, ${timeframe}, ${from}, ${to}, offset: ${utcOffset}, ignoreFlats: ${!!ignoreFlats}, volumes: ${!!volumes}`;
 }
 
 export { getTestCases, getConfigDescription };
