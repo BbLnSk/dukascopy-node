@@ -4,7 +4,7 @@ import { promisify } from 'util';
 import { instruments } from '../src/config/instruments';
 import { getMinStartDate } from './min-start-date';
 
-const writeFile = promisify(fs.readFile);
+const writeFile = promisify(fs.writeFile);
 
 (async () => {
   try {
