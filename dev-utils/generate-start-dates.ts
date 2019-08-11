@@ -6,14 +6,14 @@ import { getMinStartDate } from './min-start-date';
 
 const writeFile = promisify(fs.writeFile);
 
-(async () => {
+(async (ms: number) => {
   try {
     const data: string[][] = [];
 
     for (const instrument of Object.keys(instruments)) {
       const minstarDate = await getMinStartDate(instrument);
       data.push([instrument, minstarDate]);
-      await wait(5000);
+      await wait(ms);
     }
 
     await writeFile('instrumentsWithStartDates.json', JSON.stringify(data, null, 2));
@@ -21,7 +21,11 @@ const writeFile = promisify(fs.writeFile);
   } catch (error) {
     console.log(error);
   }
-})();
+})(((argv) => {
+  const ms = Number(argv[2]);
+  if (Number.isNaN(ms)) return 5000;
+  return ms;
+})(process.argv));
 
 function wait(ms: number) {
   return new Promise(res => {
